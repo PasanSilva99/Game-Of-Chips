@@ -21,6 +21,12 @@ int main()
     // Seed the Random Generator with the current millis to avoid the pattern of random
     srand(time(0));
     chipsInPile = (rand() % MAX_CHIPS) + 1; 
+    int CHIPS_PER_TURN = MAX_TURNS * chipsInPile;
+
+    // Rules
+    cout << "This round will start with " << chipsInPile << " chips in the pile.\n";
+    cout << "You can take up to " << CHIPS_PER_TURN << " at a time.\n";
+
 
     // Array to store the player names
     string playerNames[2];
@@ -31,6 +37,11 @@ int main()
     cin >> playerNames[1];
     cout << endl;
 
+    //Genereate the number of chips taken by the computer
+    srand(time(0));
+    int CompChips = rand() % CHIPS_PER_TURN + 1;
+
+    cout << CompChips;
 
 }
 
